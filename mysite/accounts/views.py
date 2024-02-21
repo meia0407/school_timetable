@@ -1,5 +1,4 @@
-from django.contrib.auth import login, authenticate
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import CreateView
 from django.urls import reverse_lazy
 
 from .forms import CustomUserCreationForm
@@ -9,5 +8,5 @@ from .forms import CustomUserCreationForm
 
 class CustomUserCreateView(CreateView):
     form_class = CustomUserCreationForm
-    template_name = 'accounts/signup.html'
-    success_url = reverse_lazy('school:index')
+    template_name = 'signup.html'
+    success_url = reverse_lazy('school:signup')
