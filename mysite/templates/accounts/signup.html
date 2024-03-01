@@ -1,7 +1,7 @@
 {% extends "./base.html" %}
 
 {% block title %}
-<h1>ログイン</h1>
+<h1>新規アカウント作成</h1>
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@
 		{{ field }}
 		{{ field.errors }}
 	{% endfor %}
-	<button type="submit">ログイン</button>
-	<input type="hidden" name="next" value="{{ next }}">
+	<button type="submit">作成</button>
+	<button><a href="{% url 'accounts:top' %}">戻る</a></button>
 </form>
 {% endblock %}

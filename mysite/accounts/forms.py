@@ -28,7 +28,7 @@ class CustomUserCreationForm(forms.ModelForm):
         return user
 
 
-class SignInForm(CustomUserCreationForm):
+class SignUpForm(CustomUserCreationForm):
     class Meta(CustomUserCreationForm.Meta):
         model = CustomUser
         fields = CustomUserCreationForm.Meta.fields

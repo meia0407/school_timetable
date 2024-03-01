@@ -2,13 +2,13 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView, CreateView
 from django.urls import reverse_lazy
 
-from .forms import SignInForm, LoginForm
+from .forms import SignUpForm, LoginForm
 
 # Create your views here.
 
 
-class Index(TemplateView):
-    template_name = 'accounts/index.html'
+class Top(TemplateView):
+    template_name = 'accounts/top.html'
 
 
 class Login(LoginView):
@@ -21,6 +21,6 @@ class Logout(LogoutView):
 
 
 class CustomUserCreateView(CreateView):
-    form_class = SignInForm
-    template_name = 'accounts/signin.html'
-    success_url = reverse_lazy('school:index')
+    form_class = SignUpForm
+    template_name = 'accounts/signup.html'
+    success_url = reverse_lazy('accounts:login')

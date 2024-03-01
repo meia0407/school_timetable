@@ -1,6 +1,6 @@
-{% extends "../base.html" %}
+{% extends "./base.html" %}
 
 {% block content %}
-<h1>ログアウトしました</h1>
-<p><a href="{% url 'school:index'}"></a></p>
+<p>ログアウトしました<p>
+<p><a href="{% url 'accounts:top' %}">トップページへ</a></p>
 {% endblock %}
