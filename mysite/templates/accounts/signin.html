@@ -1,14 +1,16 @@
-{% extends 'base.html' %}
+{% extends '../base.html' %}
 
 {% block title %}
 <h1>ユーザー登録</h1>
 {% endblock %}
 
 {% block content %}
-<form action="POST">
+<form action="" method="POST">
 	{% csrf_token %}
-	{{ form.as_p }}
-	<button type="submit">新規作成</button>
+	{% for field in form %}
+		{{ field }}
+	{% endfor %}
+	<button type="submit">ユーザー登録</button>
 	<a href="{% url 'school:index' %}">戻る</a>
 </form>
 {% endblock %}

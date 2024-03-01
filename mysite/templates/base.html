@@ -6,10 +6,29 @@
 		<title>School timetable</title>
 	</head>
 	<body>
-		{% block title %}
-		{% endblock %}
-		{% block content %}
-		{% endblock %}
-	</body>
+		<nav>
+			<a href="{% url 'school:index' %}">School Timetable</a>
+			<div>
+				<ul>
+					{% if user.is_authenticated %}
+						<li>
+							<a href="{% url 'accounts:logout' %}">ログアウト</a>
+						</li>
+					{% else %}
+						<li>
+							<a href="{% url 'accounts:login' %}">ログイン</a>
+							<a href="{% url 'accounts:signin' %}">ユーザー登録</a>
+						</li>
+					{% endif %}
+				</ul>
+			</div>
+		</nav>
 
+		<div>
+			{% block title %}
+			{% endblock %}
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
 </html>
