@@ -17,7 +17,7 @@ class Login(LoginView):
 
 
 class Logout(LogoutView):
-    pass
+    template_name = 'accounts/top.html'
 
 
 class CustomUserCreateView(CreateView):

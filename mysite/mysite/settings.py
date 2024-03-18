@@ -128,6 +128,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'school:index'
 LOGOUT_REDIRECT_URL = 'accounts:top'
